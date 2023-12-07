@@ -1,0 +1,91 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.header-bar {
+    background: #003366;
+    box-shadow: 0 0 12px 0px rgb(0 0 0 / 82%);
+    border-bottom:none !important;
+    color: white !important;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+.currency-label {
+    color: white !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.my-currency {
+    color: white !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: black;
+    border-radius: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+}
+.selected-currency {
+    background-color: blue;
+    cursor:text;
+}
+
+.navbar {
+    border-radius: 0px !important;
+}
+
+.item-box {
+    width: initial;
+    background-color: #11579d;
+    border-radius: 3px;
+    padding: 10px;
+    height: 210px;
+}
+.item-title {
+    font-weight: 600;
+    height: 20%; 
+    
+    overflow: hidden;
+    width: 300px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.item-description {
+    height: 65%; 
+    padding-top:5px;
+    
+    overflow: hidden;
+    width: 350px;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+.item-price {
+    font-weight: 600;
+    padding-top: 5px;
+    height: 10%
+}
