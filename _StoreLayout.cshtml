@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - My Store</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MyEvaluation.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light header-bar border-bottom box-shadow">
+            <div class="container" style="padding-left:0px;padding-right:0px;">
+                <div class="navbar-collapse collapse justify-content-between" style="padding-left:0px;padding-right:0px;">
+                    <div class="col-md-2">
+                        <a class="navbar-brand" asp-area="" asp-controller="MyStore" asp-action="Index">My Store</a>
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                    <div class="col-md-2">
+                        <ul class="navbar-nav">
+                            <li class="currency-label">
+                                Currency
+                            </li>
+                            <li class="my-currency selected-currency" onclick="selectCurrency('USD')">
+                                USD
+                            </li>
+                            <li class="my-currency" onclick="selectCurrency('EUR')">
+                                EUR
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+@*     <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - MyEvaluation - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer> *@
+    <script>
+        function selectCurrency(selectedCurrency) {
+            $(".my-currency").each(function () {
+                if ($(this).hasClass("selected-currency")) {
+                    $(this).removeClass("selected-currency");
+                }
+                if ($(this).text().trim() == selectedCurrency) {
+                    $(this).addClass("selected-currency");
+                }
+                localStorage.setItem("SelectedCurrency", selectedCurrency);
+                Load(JSON.parse(localStorage.getItem("StoreData")));
+            })
+        }
+
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
